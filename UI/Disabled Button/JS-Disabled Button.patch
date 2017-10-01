@@ -1,0 +1,16 @@
+### Eclipse Workspace Patch 1.0
+#P au-V4-web
+Index: src/main/webapp/ui/rcminterview/js/assess/rcmSetupInterviews.js
+===================================================================
+--- src/main/webapp/ui/rcminterview/js/assess/rcmSetupInterviews.js	(revision 941727)
++++ src/main/webapp/ui/rcminterview/js/assess/rcmSetupInterviews.js	(working copy)
+@@ -505,6 +505,9 @@
+                     break;
+                 case "deleteInterviewer":
+                     this._setInterviewToDelete(evt.interviewId, evt.rowNumber);
++                    if(this._interviewersTable.getRowCount()==0){
++                    	this._samePeopleCheck.setEnabled(true);
++                    }
+                     this.clearAppliedStatusMsg();
+                     this.enableApplytoApplicants(true);
+                     // no need to call this._samePeopleCheck.setEnabled() here because we have to wait for "interviewerDeleted" event to dispatch before

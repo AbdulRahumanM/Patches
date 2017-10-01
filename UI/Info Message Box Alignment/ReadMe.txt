@@ -1,0 +1,1 @@
+This patch contains code to fix the alignment of the info message displayed when an interviewer attaches notes. The message pop up didn't wrap within the Interview Assessment Section but spilled over to Stack Ranker section

@@ -1,0 +1,15 @@
+### Eclipse Workspace Patch 1.0
+#P au-V4-web
+Index: src/main/webapp/ui/rcminterview/pages/assess/CandidateRater.xhtml
+===================================================================
+--- src/main/webapp/ui/rcminterview/pages/assess/CandidateRater.xhtml	(revision 961290)
++++ src/main/webapp/ui/rcminterview/pages/assess/CandidateRater.xhtml	(working copy)
+@@ -21,7 +21,7 @@
+       <sfh:jsonOutput jsVarName="teamraterConfigAndData" jsonOutput="#{candidateRaterController.teamRaterDataAndConfig}" />
+     </ui:define>
+     <ui:define name="pageTitle">
+-      <div style="float:right; position:absolute; right:8%; top:10px;" id="attach_notes_status_message"></div>
++      <div style="float:right; position:absolute; right:300px; top:27px;" id="attach_notes_status_message"></div>
+       <div id="title_header" class="page_title">      
+       </div>
+       <div class="includeDisqDiv">

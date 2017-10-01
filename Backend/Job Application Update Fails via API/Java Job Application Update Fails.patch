@@ -1,0 +1,25 @@
+### Eclipse Workspace Patch 1.0
+#P idl-wsapi_v1-service
+Index: src/main/java/com/successfactors/wsapi_v1/domain/rcmwebservices/imports/JobApplicationUpdate.java
+===================================================================
+--- src/main/java/com/successfactors/wsapi_v1/domain/rcmwebservices/imports/JobApplicationUpdate.java	(revision 989826)
++++ src/main/java/com/successfactors/wsapi_v1/domain/rcmwebservices/imports/JobApplicationUpdate.java	(working copy)
+@@ -81,15 +81,15 @@
+         JobReqUtils.sendStatusEmails(getParamBean(), cmd.getJobReqAutoCloseVO());  
+       }
+       if (RecruitingFeatureUtil.isAssessmentIntegrationEnabled(getParamBean())
+-                                            && cmd.getAssessmentOrder() != null) {
++                                            && cmd != null && cmd.getAssessmentOrder() != null) {
+         SendAssessmentOrderCmd sendAsmtCmd = new SendAssessmentOrderCmd(cmd.getAssessmentOrder(), false);
+         sendAsmtCmd.setAuditSourceEnum(AuditSourceEnum.SFAPI);
+         sendAsmtCmd = ServiceCommandHandlerFactory.getSCAHandler().execute(sendAsmtCmd);       
+       }
+       
+-      if (ObjectEditResultHelper.statusIsError(cmd.getEditResult())) {
++      if (cmd != null && ObjectEditResultHelper.statusIsError(cmd.getEditResult())) {
+         ObjectEditResultHelper.setError(editResult, cmd.getEditResult().getMessage());
+-      } else {
++      } else if (cmd != null) {
+         ObjectEditResultHelper.setOK(editResult, EditStatus.UPDATED);
+       }
+     } catch (ServiceSystemException e) {

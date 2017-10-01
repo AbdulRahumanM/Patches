@@ -1,0 +1,40 @@
+### Eclipse Workspace Patch 1.0
+#P au-V4-web
+Index: src/main/webapp/ui/rcmcandidate/css/candidate_profile.css
+===================================================================
+--- src/main/webapp/ui/rcmcandidate/css/candidate_profile.css	(revision 927234)
++++ src/main/webapp/ui/rcmcandidate/css/candidate_profile.css	(working copy)
+@@ -563,7 +563,8 @@
+ .searchItem  input,
+ .searchItem  select,
+ .searchItem  textArea {
+-  margin: 1px 5px;
++  margin: auto;
++  margin-left: 2px;
+ }
+ #candidateSearch  .longInput {
+   width: 300px;
+@@ -576,6 +577,23 @@
+   width: 400px;
+ }
+ 
++/*fix to overcome look and feel issue in candidate search page when fiori is enabled*/
++#candidateSearch .sfDropDownContainer{
++	overflow:visible;
++	margin-left:2px; 	
++}
++
++#candidateSearch .sfTabBoxLayoutPanelList ul.tab_list li {
++	height:auto;
++}
++#candidateSearch .sfTabBoxLayoutPanelList ul.tab_list li a {
++	margin-top:auto;
++}
++#candidateSearch .sfTabBoxLayoutPanelList ul.tab_list li.selected {
++    border-bottom: 1px solid #ffffff;
++    height: auto;
++}
++
+ /*search menu styles*/
+ #candidateSearch .searchKey ul {
+   list-style:none;

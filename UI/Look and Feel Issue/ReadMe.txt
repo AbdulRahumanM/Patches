@@ -1,0 +1,1 @@
+Fix to overcome look and feel issue in candidate search page when fiori is enabled

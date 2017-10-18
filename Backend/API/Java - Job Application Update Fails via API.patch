@@ -1,3 +1,6 @@
+===================================================================
+Patch to fix the job application update failure via API.
+===================================================================
 ### Eclipse Workspace Patch 1.0
 #P idl-wsapi_v1-service
 Index: src/main/java/com/successfactors/wsapi_v1/domain/rcmwebservices/imports/JobApplicationUpdate.java

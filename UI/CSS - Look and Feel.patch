@@ -1,3 +1,6 @@
+===================================================================
+Fix to overcome look and feel issue in candidate search page when fiori is enabled
+===================================================================
 ### Eclipse Workspace Patch 1.0
 #P au-V4-web
 Index: src/main/webapp/ui/rcmcandidate/css/candidate_profile.css

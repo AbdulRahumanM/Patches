@@ -1,1 +1,0 @@
-This patch contains code to fix the issue to show button "Same people as last time" when there are no interviewers assigned to the job applicant.

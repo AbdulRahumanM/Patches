@@ -1,3 +1,6 @@
+===================================================================
+This patch contains code to fix the issue to show button "Same people as last time" when there are no interviewers assigned to the job applicant.
+===================================================================
 ### Eclipse Workspace Patch 1.0
 #P au-V4-web
 Index: src/main/webapp/ui/rcminterview/js/assess/rcmSetupInterviews.js

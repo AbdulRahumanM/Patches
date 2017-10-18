@@ -1,0 +1,17 @@
+===================================================================
+Fix to disable the select all checkbox by defaut on opening the dialog box
+===================================================================
+### Eclipse Workspace Patch 1.0
+#P au-V4-web
+Index: src/main/webapp/ui/rcmagency/js/RCMAgencyPosting.js
+===================================================================
+--- src/main/webapp/ui/rcmagency/js/RCMAgencyPosting.js	(revision 973506)
++++ src/main/webapp/ui/rcmagency/js/RCMAgencyPosting.js	(working copy)
+@@ -474,6 +474,7 @@
+                     this._model._index = 0;
+                     if(!this._dialog)
+                        this._displayDialogBox();
++                    this._agencyPostingForm.agencyList._selectAllCheckBox.setChecked(false);
+                     for (var i = 0, len= this._data.length; i < len; i++) {
+                         if (this._data[i].posted == true) {
+                             this._agencyPostingForm.agencyList._leftGrid._rows[i][0].setEnabled(false);

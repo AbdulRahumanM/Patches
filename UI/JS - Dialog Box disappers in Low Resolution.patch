@@ -1,0 +1,28 @@
+===================================================================
+Patch to fix the issue when dialog box cut from the window in low resolution screens
+===================================================================
+### Eclipse Workspace Patch 1.0
+#P au-V4-web
+Index: src/main/webapp/ui/rcmcandidate/js/RCMCandSearchDisplayOptions.js
+===================================================================
+--- src/main/webapp/ui/rcmcandidate/js/RCMCandSearchDisplayOptions.js	(revision 988593)
++++ src/main/webapp/ui/rcmcandidate/js/RCMCandSearchDisplayOptions.js	(working copy)
+@@ -170,17 +170,7 @@
+       this._displayOptionsPopup = new RCMCandSearchDisplayOptions(this._displayOptionsModel);
+       this._displayOptionsPopup.addEventListener("updateScreen", this);
+       this._displayOptionsPopup.addEventListener("refocus", this);
+-      SFPositionManager.showMenu(this._displayOptionsPopup,
+-          this._displayOptionsCtxMenuId, {
+-            origin : {
+-              vertical : "top",
+-              horizontal : "right"
+-            },
+-            menu : {
+-              vertical : "top",
+-              horizontal : "left"
+-            }
+-          });
++      SFOverlayMgr.showOverlay(this._displayOptionsPopup, true);
+       var candidateSummaryDisplayWrapper = juic.$(this._displayOptionsPopup.id+"_candidateSummaryDisplayOptions");
+       if(candidateSummaryDisplayWrapper) {
+     	  candidateSummaryDisplayWrapper.parentNode.style.width = parseInt(candidateSummaryDisplayWrapper.offsetWidth) + 30 + "px";
